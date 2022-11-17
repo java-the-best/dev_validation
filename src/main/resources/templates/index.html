@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Main</title>
+</head>
+<body>
+<form action="/form" method="post" th:object="${person}">
+  <div>
+    <label for="name">Имя</label>
+    <input type="text" th:field="*{name}" id="name">
+  </div>
+  <div>
+    <label for="birthday">День рождения</label>
+    <input type="text" th:field="*{birthday}" id="birthday">
+  </div>
+  <div>
+    <input type="submit" value="Отправить">
+  </div>
+</form>
+</body>
+</html>
