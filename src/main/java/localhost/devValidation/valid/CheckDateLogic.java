@@ -26,11 +26,11 @@ public class CheckDateLogic implements ConstraintValidator<CheckDate, String> {
     return Stream.of(formats).anyMatch(format -> check(date, format));
   }
 
-  private boolean check(String date, String format) {
+  private boolean check(String dateString, String format) {
     try {
       SimpleDateFormat sdf = new SimpleDateFormat(format);
-      Date parse = sdf.parse(date);
-      if (Objects.equals(date, sdf.format(parse))) {
+      Date date = sdf.parse(dateString);
+      if (Objects.equals(dateString, sdf.format(date))) {
         return true;
       }
     } catch (Exception ignored) {
